@@ -24,3 +24,89 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* RSVP Form Styles */
+
+.rsvp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #cce4ff; /* light blue background */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rsvp-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.rsvp-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rsvp-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+.rsvp-form input[type="text"],
+.rsvp-form input[type="email"],
+.rsvp-form input[type="number"],
+.rsvp-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.rsvp-form input:focus,
+.rsvp-form textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* Tailwind blue-500 */
+}
+
+.rsvp-form .checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rsvp-form button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rsvp-form button:hover {
+  background-color: #2563eb; /* darker blue */
+}
+
+.rsvp-status {
+  text-align: center;
+  margin-top: 1rem;
+  color: #444;
+}
+

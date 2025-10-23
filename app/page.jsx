@@ -1,6 +1,7 @@
-"use client"; // client-side component
+"use client";
 
 import { useState } from "react";
+import "./globals.css"; // make sure this is imported if not already
 
 export default function Home() {
   const [form, setForm] = useState({
@@ -43,32 +44,39 @@ export default function Home() {
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "2rem auto", fontFamily: "sans-serif" }}>
-      <h1>Wedding RSVP</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:<br />
-          <input name="name" value={form.name} onChange={handleChange} required />
-        </label><br /><br />
-        <label>
-          Email:<br />
-          <input name="email" type="email" value={form.email} onChange={handleChange} required />
-        </label><br /><br />
-        <label>
-          Attending:<br />
-          <input name="attending" type="checkbox" checked={form.attending} onChange={handleChange} />
-        </label><br /><br />
-        <label>
-          Number of Guests:<br />
-          <input name="guests" type="number" min="0" value={form.guests} onChange={handleChange} />
-        </label><br /><br />
-        <label>
-          Message:<br />
-          <textarea name="message" value={form.message} onChange={handleChange} />
-        </label><br /><br />
-        <button type="submit">Submit RSVP</button>
-      </form>
-      <p>{status}</p>
+    <div className="rsvp-container">
+      <div className="rsvp-box">
+        <h1 className="rsvp-title">RSVP</h1>
+        <form onSubmit={handleSubmit} className="rsvp-form">
+          <label>
+            Name:
+            <input name="name" value={form.name} onChange={handleChange} required />
+          </label>
+
+          <label>
+            Email:
+            <input name="email" type="email" value={form.email} onChange={handleChange} required />
+          </label>
+
+          <label className="checkbox">
+            <input name="attending" type="checkbox" checked={form.attending} onChange={handleChange} />
+            Attending
+          </label>
+
+          <label>
+            Number of Guests:
+            <input name="guests" type="number" min="0" value={form.guests} onChange={handleChange} />
+          </label>
+
+          <label>
+            Message:
+            <textarea name="message" value={form.message} onChange={handleChange} />
+          </label>
+
+          <button type="submit">Submit RSVP</button>
+        </form>
+        <p className="rsvp-status">{status}</p>
+      </div>
     </div>
   );
 }
